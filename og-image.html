@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #FFFFFF; font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  :root {
+    --green-deep: #1C3A2A;
+    --green-mid:  #2E5A3E;
+    --green-soft: #4A7C59;
+    --green-pale: #EBF2ED;
+  }
+  .card { position: relative; width: 1200px; height: 630px; overflow: hidden; }
+
+  .bg-letter {
+    position: absolute;
+    top: -0.1em; left: -0.03em;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 760px; font-weight: 300; line-height: 1;
+    color: var(--green-pale);
+    letter-spacing: -0.05em; z-index: 0;
+  }
+
+  .green-shape { position: absolute; inset: 0; z-index: 1; }
+
+  .portrait {
+    position: absolute;
+    right: 130px; top: 50%; transform: translateY(-52%);
+    z-index: 2;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(28,58,42,0.12);
+    box-shadow: 0 30px 60px -20px rgba(28,58,42,0.4), 0 0 0 10px #FFFFFF;
+  }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+
+  .left {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 0 0 0 84px;
+  }
+
+  .label {
+    font-size: 15px; font-weight: 600;
+    letter-spacing: 0.22em; color: var(--green-soft);
+    margin-bottom: 22px; text-transform: uppercase;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .label::before { content: ''; display: block; width: 34px; height: 2px; background: currentColor; }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 122px;
+    font-weight: 300; line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--green-deep);
+    margin-bottom: 28px;
+  }
+  h1 em { font-style: italic; color: var(--green-soft); font-weight: 300; }
+
+  .tagline {
+    font-size: 21px; font-weight: 400;
+    color: #5C6B60; letter-spacing: 0.005em;
+    line-height: 1.6; max-width: 480px;
+  }
+
+  .brand-tag {
+    position: absolute; left: 84px; bottom: 46px; z-index: 3;
+    font-size: 14px; font-weight: 500; letter-spacing: 0.08em;
+    color: rgba(28,58,42,0.4);
+  }
+  .brand-tag strong { color: var(--green-deep); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="bg-letter">G</div>
+
+  <svg class="green-shape" width="1200" height="630" viewBox="0 0 1200 630" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="gGlow" cx="82%" cy="18%" r="55%">
+        <stop offset="0%" stop-color="#2E5A3E"/>
+        <stop offset="100%" stop-color="#1C3A2A"/>
+      </radialGradient>
+    </defs>
+    <path d="
+      M 860,0
+      C 838,56  882,112  850,175
+      C 818,238 878,294  846,364
+      C 814,434 872,490  840,560
+      C 826,606 848,620  844,630
+      L 1200,630
+      L 1200,0
+      Z
+    " fill="url(#gGlow)"/>
+    <path d="
+      M 860,0
+      C 838,56  882,112  850,175
+      C 818,238 878,294  846,364
+      C 814,434 872,490  840,560
+      C 826,606 848,620  844,630
+      L 862,630
+      C 866,620 846,606 858,560
+      C 890,490 832,434 864,364
+      C 896,294 838,238 870,175
+      C 900,112 858,56 878,0
+      Z
+    " fill="rgba(255,255,255,0.03)"/>
+  </svg>
+
+  <div class="portrait">
+    <img src="greg.jpg" alt="">
+  </div>
+
+  <div class="left">
+    <div class="label">Golf Professional</div>
+    <h1>Greg<br><em>Cullen</em></h1>
+    <p class="tagline">Individuelles Golf-Coaching am<br>Golfclub Odenwald — Technik, Kurzspiel<br>und Platzstrategie für jedes Niveau.</p>
+  </div>
+
+  <div class="brand-tag"><strong>Greg Cullen</strong> Golf · PGA Certified Professional</div>
+</div>
+</body>
+</html>
