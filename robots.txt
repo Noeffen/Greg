@@ -3,4 +3,4 @@ Allow: /
 Disallow: /impressum.html
 Disallow: /datenschutz.html
 
-Sitemap: https://greg-cullen-golf.de/sitemap.xml
+Sitemap: https://noeffen.github.io/Greg/sitemap.xml
