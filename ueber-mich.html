@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Über mich · Greg Cullen Golf</title>
+  <meta name="description" content="Greg Cullen ist PGA Certified Golf Professional am Golfclub Odenwald mit Schwerpunkt auf Technik, Putting und Platzstrategie — für Golfer jeden Niveaus.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://greg-cullen-golf.de/ueber-mich.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --green-deep: #1C3A2A; --green-mid: #2E5A3E; --green-soft: #4A7C59;
+      --green-pale: #EBF2ED; --white: #FFFFFF; --ink: #181A18; --muted: #7A8A7E;
+    }
+    body { background: var(--white); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; color: var(--ink); }
+    a { color: var(--green-soft); text-decoration: none; }
+    a:hover { color: var(--green-deep); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 5.5rem; }
+
+    nav { padding: 2rem 0; }
+    .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 5.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--green-deep); }
+    .brand em { font-style: italic; color: var(--green-soft); }
+    .back { font-size: 11px; letter-spacing: 0.07em; color: var(--muted); }
+
+    main { padding: 2rem 0 6rem; }
+    .label {
+      font-size: 10.5px; font-weight: 500; letter-spacing: 0.2em; color: var(--green-soft);
+      margin-bottom: 1.2rem; text-transform: uppercase; display: flex; align-items: center; gap: 0.7rem;
+    }
+    .label::before { content: ''; display: block; width: 20px; height: 1px; background: currentColor; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.05; color: var(--green-deep); margin-bottom: 3rem; }
+    h1 em { font-style: italic; color: var(--green-soft); }
+
+    .about-grid { display: grid; grid-template-columns: 220px 1fr 0.85fr; gap: 3.5rem; align-items: start; }
+    .about-portrait { width: 220px; height: 220px; border-radius: 50%; overflow: hidden; border: 1px solid rgba(28,58,42,0.12); box-shadow: 0 20px 40px -16px rgba(28,58,42,0.3); }
+    .about-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+
+    .about-text p { font-size: 15px; color: var(--ink); opacity: 0.72; line-height: 1.9; font-weight: 300; margin-bottom: 1.3rem; max-width: 480px; }
+
+    .about-facts { display: flex; flex-direction: column; gap: 0; }
+    .fact-row { padding: 1.3rem 0; border-top: 1px solid rgba(28,58,42,0.12); }
+    .about-facts .fact-row:last-child { border-bottom: 1px solid rgba(28,58,42,0.12); }
+    .fact-label { font-size: 9.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-soft); margin-bottom: 0.4rem; }
+    .fact-value { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--green-deep); line-height: 1.4; }
+
+    .cta-box { margin-top: 4rem; padding: 2.4rem; background: var(--green-pale); border-radius: 4px; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .cta-box p { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--green-deep); }
+    .btn-primary {
+      display: inline-block; padding: 0.9rem 2rem; background: var(--green-deep); color: white;
+      font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 500; letter-spacing: 0.05em;
+      text-decoration: none; border-radius: 1px; transition: background 0.25s;
+    }
+    .btn-primary:hover { background: var(--green-mid); color: white; }
+
+    footer { padding: 2.4rem 0; border-top: 1px solid rgba(28,58,42,0.1); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 11px; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.6rem; }
+    .footer-links a:hover { color: var(--green-deep); }
+
+    @media(max-width: 768px) {
+      .container, .nav-inner { padding: 0 1.8rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-portrait { width: 150px; height: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Greg <em>Cullen</em></a>
+    <a href="index.html" class="back">← Zurück zur Startseite</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="label">Über mich</div>
+    <h1>Golf ist Technik <em>und</em> Vertrauen.</h1>
+
+    <div class="about-grid">
+      <div class="about-portrait">
+        <img src="greg.jpg" alt="Greg Cullen, PGA Golf Professional am Golfclub Odenwald">
+      </div>
+      <div class="about-text">
+        <p>Als PGA Certified Golf Professional am Golfclub Odenwald arbeite ich mit Golferinnen und Golfern jeden Niveaus — vom ersten Kontakt mit dem Schläger bis zur Feinarbeit am Kurzspiel erfahrener Spieler.</p>
+        <p>Mein Schwerpunkt liegt auf einer klaren, nachvollziehbaren Technik, präzisem Putting und einer Platzstrategie, die auf dem Platz wirklich funktioniert — nicht nur auf der Range.</p>
+        <p>Jedes Coaching ist individuell: Wir arbeiten an dem, was für dein Spiel gerade den größten Unterschied macht — Schritt für Schritt, mit klaren, nachvollziehbaren Zielen.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact-row">
+          <div class="fact-label">Lizenz</div>
+          <div class="fact-value">PGA Certified Golf Professional</div>
+        </div>
+        <div class="fact-row">
+          <div class="fact-label">Heimatclub</div>
+          <div class="fact-value">Golfclub Odenwald e.V.</div>
+        </div>
+        <div class="fact-row">
+          <div class="fact-label">Schwerpunkte</div>
+          <div class="fact-value">Technik · Putting · Platzstrategie</div>
+        </div>
+        <div class="fact-row">
+          <div class="fact-label">Niveau</div>
+          <div class="fact-value">Einsteiger bis Turnierspieler</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <p>Lust, gemeinsam am Spiel zu arbeiten?</p>
+      <a href="kontakt.html" class="btn-primary">Kontakt aufnehmen →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Greg Cullen Golf</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

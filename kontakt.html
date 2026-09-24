@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt · Greg Cullen Golf</title>
+  <meta name="description" content="Kontaktiere Greg Cullen, PGA Golf Professional am Golfclub Odenwald, für Einzelunterricht, Platzreifekurs oder Playing Lessons.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://greg-cullen-golf.de/kontakt.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --green-deep: #1C3A2A; --green-mid: #2E5A3E; --green-soft: #4A7C59;
+      --green-pale: #EBF2ED; --white: #FFFFFF; --ink: #181A18; --muted: #7A8A7E;
+    }
+    body { background: var(--white); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; color: var(--ink); }
+    a { color: var(--green-soft); text-decoration: none; }
+    a:hover { color: var(--green-deep); }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 5.5rem; }
+
+    nav { padding: 2rem 0; }
+    .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 5.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--green-deep); }
+    .brand em { font-style: italic; color: var(--green-soft); }
+    .back { font-size: 11px; letter-spacing: 0.07em; color: var(--muted); }
+
+    main { padding: 2rem 0 6rem; }
+    .label {
+      font-size: 10.5px; font-weight: 500; letter-spacing: 0.2em; color: var(--green-soft);
+      margin-bottom: 1.2rem; text-transform: uppercase; display: flex; align-items: center; gap: 0.7rem;
+    }
+    .label::before { content: ''; display: block; width: 20px; height: 1px; background: currentColor; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.05; color: var(--green-deep); margin-bottom: 1.3rem; }
+    h1 em { font-style: italic; color: var(--green-soft); }
+    .intro { font-size: 15px; color: var(--muted); line-height: 1.85; font-weight: 300; max-width: 480px; margin-bottom: 3.5rem; }
+
+    .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 4.5rem; align-items: start; }
+
+    .contact-links { display: flex; flex-direction: column; gap: 0; }
+    .contact-link { display: block; padding: 1.4rem 0; border-top: 1px solid rgba(28,58,42,0.12); text-decoration: none; }
+    .contact-links .contact-link:last-child { border-bottom: 1px solid rgba(28,58,42,0.12); }
+    .fact-label { font-size: 9.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-soft); margin-bottom: 0.4rem; }
+    .fact-value { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--green-deep); }
+    a.contact-link .fact-value { transition: opacity 0.2s; }
+    a.contact-link:hover .fact-value { opacity: 0.65; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1.3rem; background: var(--green-pale); padding: 2.6rem; border-radius: 4px; }
+    .contact-form label { font-size: 9.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-soft); margin-bottom: 0.5rem; display: block; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(28,58,42,0.25);
+      color: var(--ink); font-family: 'Inter', sans-serif; font-size: 14px; padding: 0.6rem 0; outline: none;
+      transition: border-color 0.2s;
+    }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(24,26,24,0.3); }
+    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--green-deep); }
+    .contact-form textarea { resize: vertical; min-height: 90px; }
+    .btn-primary {
+      display: inline-block; align-self: flex-start; margin-top: 0.4rem;
+      padding: 0.95rem 2.2rem; background: var(--green-deep); color: white;
+      font-family: 'Inter', sans-serif; font-size: 12.5px; font-weight: 500; letter-spacing: 0.05em;
+      text-decoration: none; border: none; border-radius: 1px; cursor: pointer; transition: background 0.25s;
+    }
+    .btn-primary:hover { background: var(--green-mid); }
+
+    footer { padding: 2.4rem 0; border-top: 1px solid rgba(28,58,42,0.1); }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 11px; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.6rem; }
+    .footer-links a:hover { color: var(--green-deep); }
+
+    @media(max-width: 768px) {
+      .container, .nav-inner { padding: 0 1.8rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-form { padding: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Greg <em>Cullen</em></a>
+    <a href="index.html" class="back">← Zurück zur Startseite</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="label">Kontakt</div>
+    <h1>Bereit für die <em>nächste Stunde?</em></h1>
+    <p class="intro">Schreib mir kurz, worum es geht — ich melde mich persönlich zurück.</p>
+
+    <div class="contact-grid">
+      <div class="contact-links">
+        <a href="tel:+491234567890" class="contact-link">
+          <div class="fact-label">Telefon</div>
+          <div class="fact-value">+49 123 456 7890</div>
+        </a>
+        <a href="mailto:greg@example.com" class="contact-link">
+          <div class="fact-label">E-Mail</div>
+          <div class="fact-value">greg@example.com</div>
+        </a>
+        <div class="contact-link">
+          <div class="fact-label">Golfclub</div>
+          <div class="fact-value">Golfclub Odenwald e.V.</div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Dein Name" required>
+        </div>
+        <div>
+          <label for="email">E-Mail</label>
+          <input type="email" id="email" name="email" placeholder="deine@email.de" required>
+        </div>
+        <div>
+          <label for="interesse">Interesse</label>
+          <select id="interesse" name="interesse">
+            <option value="">Bitte wählen</option>
+            <option>Einzelunterricht</option>
+            <option>Platzreifekurs</option>
+            <option>Kurzcoaching & Videoanalyse</option>
+            <option>Playing Lessons</option>
+            <option>Gruppentraining</option>
+          </select>
+        </div>
+        <div>
+          <label for="nachricht">Nachricht</label>
+          <textarea id="nachricht" name="nachricht" placeholder="Worum geht es?"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Anfrage senden →</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Greg Cullen Golf</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var name = document.getElementById('name').value;
+  var interesse = document.getElementById('interesse').value;
+  var nachricht = document.getElementById('nachricht').value;
+  var subject = 'Anfrage' + (interesse ? ': ' + interesse : '') + ' – ' + name;
+  var body = (interesse ? 'Interesse: ' + interesse + '\n\n' : '') + nachricht + '\n\n— ' + name;
+  window.location.href = 'mailto:greg@example.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
+</script>
+
+</body>
+</html>
