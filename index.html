@@ -231,20 +231,26 @@
     @media(max-width: 768px) {
       html, body { overflow: auto; }
       .page { height: auto; min-height: 100dvh; overflow: visible; }
-      .left { position: relative; padding: 5rem 1.8rem 2.5rem; pointer-events: all; }
-      h1 { font-size: clamp(3.8rem, 16vw, 5.5rem); }
+      .left { position: relative; padding: 7rem 1.8rem 1rem; pointer-events: all; }
+      h1 { font-size: clamp(3.4rem, 15vw, 5rem); }
       .bg-letter { font-size: 80vw; }
       .green-shape { display: none; }
       .portrait {
-        position: relative; right: auto; top: auto; transform: none;
-        width: 190px; height: 190px; margin-bottom: 2rem;
+        position: absolute;
+        top: 1.5rem; right: 1.6rem; left: auto; bottom: auto; transform: none;
+        width: 80px; height: 80px;
+        box-shadow: 0 10px 24px -10px rgba(28,58,42,0.35), 0 0 0 6px var(--white);
+      }
+      .bottom-nav {
+        position: relative; left: auto; bottom: auto;
+        display: flex; flex-wrap: wrap; gap: 1.3rem;
+        padding: 0 1.8rem 2.2rem;
       }
       .right-content {
         position: relative; width: 100%;
         background: var(--green-deep);
         padding: 2.5rem 1.8rem;
       }
-      .bottom-nav { display: none; }
     }
   </style>
 </head>
