@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Greg Cullen · Golf Professional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --green-deep: #1C3A2A;
+      --green-mid:  #2E5A3E;
+      --green-soft: #4A7C59;
+      --green-pale: #EBF2ED;
+      --white: #FFFFFF;
+      --ink: #181A18;
+      --muted: #7A8A7E;
+    }
+    html, body { height: 100%; overflow: hidden; background: var(--white); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+
+    /* ── FULL PAGE ── */
+    .page { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+
+    /* ── BACKGROUND G ── */
+    .bg-letter {
+      position: absolute;
+      top: -0.12em; left: -0.04em;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 60vw; font-weight: 300; line-height: 1;
+      color: var(--green-pale);
+      pointer-events: none; user-select: none;
+      letter-spacing: -0.05em; z-index: 0;
+    }
+
+    /* ── GREEN ORGANIC SHAPE ── */
+    .green-shape {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* ── LEFT CONTENT ── */
+    .left {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3.5rem 5rem 4rem 5.5rem;
+      pointer-events: none;
+    }
+    .left-content { pointer-events: all; }
+
+    .label {
+      font-size: 10.5px; font-weight: 500;
+      letter-spacing: 0.2em; color: var(--green-soft);
+      margin-bottom: 1.4rem;
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .label::before { content: ''; display: block; width: 20px; height: 1px; background: currentColor; }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(5rem, 9.5vw, 8.5rem);
+      font-weight: 300; line-height: 0.92;
+      letter-spacing: -0.025em;
+      color: var(--green-deep);
+      margin-bottom: 2rem;
+    }
+    h1 em { font-style: italic; color: var(--green-soft); font-weight: 300; }
+
+    .tagline {
+      font-size: 14.5px; font-weight: 300;
+      color: var(--muted); letter-spacing: 0.01em;
+      line-height: 1.75; max-width: 360px;
+    }
+
+    /* ── BOTTOM NAV ── */
+    .bottom-nav {
+      position: absolute; bottom: 2.8rem; left: 5.5rem;
+      display: flex; gap: 2.2rem; z-index: 2;
+    }
+    .bottom-nav a {
+      font-size: 11px; font-weight: 400;
+      color: var(--muted); text-decoration: none;
+      letter-spacing: 0.07em; transition: color 0.2s;
+    }
+    .bottom-nav a:hover { color: var(--green-deep); }
+
+    /* ── RIGHT CONTENT (on green) ── */
+    .right-content {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 340px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 3.5rem 3rem 3.5rem 4rem;
+    }
+
+    .right-label {
+      font-size: 9.5px; font-weight: 500;
+      letter-spacing: 0.2em; color: rgba(255,255,255,0.32);
+      margin-bottom: 0.4rem;
+    }
+    .right-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; font-weight: 400;
+      color: white; line-height: 1.4;
+    }
+    .right-divider {
+      width: 100%; height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 1.5rem 0;
+    }
+
+    /* CTAs */
+    .cta { display: flex; flex-direction: column; gap: 0.75rem; }
+    .btn-primary {
+      display: block; width: 100%;
+      padding: 0.95rem 1.5rem;
+      background: white; color: var(--green-deep);
+      font-family: 'Inter', sans-serif;
+      font-size: 12.5px; font-weight: 500;
+      letter-spacing: 0.05em; text-decoration: none;
+      text-align: center; border: none; border-radius: 1px;
+      cursor: pointer; transition: background 0.25s;
+    }
+    .btn-primary:hover { background: var(--green-pale); }
+    .btn-secondary {
+      display: block; width: 100%;
+      padding: 0.85rem 1.5rem;
+      background: transparent;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Inter', sans-serif;
+      font-size: 12.5px; font-weight: 400;
+      letter-spacing: 0.05em; text-decoration: none;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 1px; cursor: pointer;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.35); color: white; }
+
+    /* ── MOBILE ── */
+    @media(max-width: 768px) {
+      html, body { overflow: auto; }
+      .page { height: auto; min-height: 100dvh; overflow: visible; }
+      .left { position: relative; padding: 5rem 1.8rem 2.5rem; pointer-events: all; }
+      h1 { font-size: clamp(3.8rem, 16vw, 5.5rem); }
+      .bg-letter { font-size: 80vw; }
+      .green-shape { display: none; }
+      .right-content {
+        position: relative; width: 100%;
+        background: var(--green-deep);
+        padding: 2.5rem 1.8rem;
+      }
+      .bottom-nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="bg-letter">G</div>
+
+  <!-- ORGANIC GREEN SHAPE via SVG -->
+  <svg class="green-shape" viewBox="0 0 1440 900" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="gGlow" cx="80%" cy="20%" r="50%">
+        <stop offset="0%" stop-color="#2E5A3E"/>
+        <stop offset="100%" stop-color="#1C3A2A"/>
+      </radialGradient>
+    </defs>
+    <!-- Organic flowing shape — left edge curves like a fairway boundary -->
+    <path d="
+      M 1030,0
+      C 1010,80  1060,160  1030,250
+      C 1000,340 1070,420  1040,520
+      C 1010,620 1065,700  1035,800
+      C 1020,860 1045,880  1040,900
+      L 1440,900
+      L 1440,0
+      Z
+    " fill="url(#gGlow)"/>
+    <!-- Subtle inner highlight -->
+    <path d="
+      M 1030,0
+      C 1010,80  1060,160  1030,250
+      C 1000,340 1070,420  1040,520
+      C 1010,620 1065,700  1035,800
+      C 1020,860 1045,880  1040,900
+      L 1060,900
+      C 1065,880 1042,860 1058,800
+      C 1088,700 1035,620 1065,520
+      C 1095,420 1028,340 1057,250
+      C 1083,160 1035,80 1055,0
+      Z
+    " fill="rgba(255,255,255,0.025)"/>
+  </svg>
+
+  <!-- LEFT: Name + Tagline -->
+  <div class="left">
+    <div class="left-content">
+      <div class="label">Golf Professional</div>
+      <h1>Greg<br><em>Cullen</em></h1>
+      <p class="tagline">
+        Individuelles Coaching für Golfer<br>
+        auf jedem Niveau — technisch präzise,<br>
+        auf dem Platz sofort spürbar.
+      </p>
+    </div>
+  </div>
+
+  <!-- BOTTOM LINKS -->
+  <div class="bottom-nav">
+    <a href="mailto:greg@example.com">greg@example.com</a>
+    <a href="tel:+491234567890">+49 123 456 7890</a>
+    <a href="#">Golfclub Odenwald</a>
+  </div>
+
+  <!-- RIGHT: Details on green -->
+  <div class="right-content">
+    <div>
+      <div class="right-label">Lizenz</div>
+      <div class="right-value">PGA Certified<br>Golf Professional</div>
+      <div class="right-divider"></div>
+      <div class="right-label">Club</div>
+      <div class="right-value">Golfclub<br>Odenwald e.V.</div>
+      <div class="right-divider"></div>
+      <div class="right-label">Schwerpunkte</div>
+      <div class="right-value">Technik · Putting<br>Platzstrategie</div>
+    </div>
+    <div class="cta">
+      <a href="#" class="btn-primary">Stunde buchen</a>
+      <a href="#" class="btn-secondary">Kontakt</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
